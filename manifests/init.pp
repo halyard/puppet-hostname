@@ -20,12 +20,6 @@ class hostname(
     require => Sudoers['scutil_sudoers']
   }
 
-  exec { 'set computername':
-    command => "sudo /usr/sbin/scutil --set ComputerName ${hostname}",
-    unless  => "test `scutil --get ComputerName` == '${hostname}'",
-    require => Sudoers['scutil_sudoers']
-  }
-
   boxen::osx_defaults { 'set netbiosname':
     user   => $::boxen_user,
     key    => 'NetBIOSName',
