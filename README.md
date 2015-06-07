@@ -9,7 +9,6 @@ In your hiera config:
 
 ```
 hostname::hostname: foo
-hostname::domain: example.com
 ```
 
 ```puppet
@@ -18,6 +17,6 @@ include hostname
 
 ## Required Puppet Modules
 
-* `boxen`
-* `sudo`
+* [boxen](https://github.com/halyard/puppet-boxen)
+* [sudoers](https://github.com/halyard/puppet-sudoers)
 

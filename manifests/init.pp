@@ -5,19 +5,19 @@ class hostname(
   exec { 'set computername':
     command => "sudo /usr/sbin/scutil --set ComputerName ${hostname}",
     unless  => "test `scutil --get ComputerName` == '${hostname}'",
-    require => Sudoers['scutil_sudoers']
+    require => Sudoers::Allowed_Command['hostname_scutil']
   }
 
   exec { 'set hostname':
     command => "sudo /usr/sbin/scutil --set HostName ${hostname}",
     unless  => "test `scutil --get HostName` == '${hostname}'",
-    require => Sudoers['scutil_sudoers']
+    require => Sudoers::Allowed_Command['hostname_scutil']
   }
 
   exec { 'set localhostname':
     command => "sudo /usr/sbin/scutil --set LocalHostName ${hostname}",
     unless  => "test `scutil --get LocalHostName` == '${hostname}'",
-    require => Sudoers['scutil_sudoers']
+    require => Sudoers::Allowed_Command['hostname_scutil']
   }
 
   boxen::osx_defaults { 'set netbiosname':
@@ -27,12 +27,11 @@ class hostname(
     value  => $hostname
   }
 
-  sudoers { 'scutil_sudoers':
-    users       => $::boxen_user,
-    hosts       => 'ALL',
-    commands    => [
-      '(ALL) NOPASSWD: /usr/sbin/scutil',
-    ],
-    type        => 'user_spec',
+  sudoers::allowed_command{ 'hostname_scutil':
+    command          => '/usr/sbin/scutil',
+    user             => $::boxen_user,
+    require_password => false,
+    comment          => 'Allow boxen user to control scutil',
+    require_exist    => false
   }
 }
