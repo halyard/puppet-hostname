@@ -24,6 +24,7 @@ class hostname(
     user   => $::boxen_user,
     key    => 'NetBIOSName',
     domain => 'com.apple.smb.server',
+    type   => 'string',
     value  => $hostname
   }
 
