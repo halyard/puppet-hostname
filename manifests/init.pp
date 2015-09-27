@@ -1,3 +1,17 @@
+# == Class: hostname
+#
+# Set the hostname on a Mac
+#
+# === Parameters
+#  [*hostname*] Hostname to use
+#
+# === Example
+#
+#   class { 'hostname':
+#     hostname => 'potato'
+#   }
+#
+
 class hostname (
   $hostname,
 ) {
