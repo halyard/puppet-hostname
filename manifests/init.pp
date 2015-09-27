@@ -1,5 +1,5 @@
 class hostname(
-  $hostname = $hostname,
+  $hostname,
 ) {
 
   exec { 'set computername':
