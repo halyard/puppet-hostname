@@ -1,4 +1,4 @@
-class hostname(
+class hostname (
   $hostname,
 ) {
 
