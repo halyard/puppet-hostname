@@ -1,0 +1,4 @@
+test:
+  override:
+    - bundle exec puppet-lint environments
+    - bundle exec puppet parser validate environments
