@@ -1,0 +1,22 @@
+{
+  "name": "halyard-hostname",
+  "version": "0.0.5",
+  "author": "Les Aker",
+  "license": "MIT",
+  "summary": "Configure hostname via Boxen",
+  "source": "https://github.com/halyard/puppet-hostname",
+  "project_page": "https://github.com/halyard/puppet-hostname",
+  "issues_url": "https://github.com/halyard/puppet-hostname/issues",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Darwin",
+      "operatingsystemmajrelease": [
+        "14",
+        "15"
+      ]
+    }
+  ]
+}
