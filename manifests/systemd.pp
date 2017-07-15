@@ -6,7 +6,7 @@ class hostname::systemd {
 
   exec { 'set hostname':
     command => "hostnamectl set-hostname ${local_hostname}",
-    unless  => "test `hostnamectl --static` == '${local_hostname}",
+    unless  => "test `hostnamectl --static` == '${local_hostname}'",
     path    => ['/usr/bin', '/bin']
   }
 
