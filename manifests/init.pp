@@ -19,7 +19,7 @@ class hostname (
 ) {
   case $::osfamily {
     'Darwin': { include hostname::darwin }
-    'Archlinux': { include hostname::archlinux }
+    'Archlinux': { include hostname::systemd }
     default: { fail("Hostname module does not support ${::osfamily}") }
   }
 }
