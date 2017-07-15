@@ -1,0 +1,6 @@
+#
+# /etc/hosts: static lookup table for host names
+#
+
+127.0.0.1 localhost.localdomain localhost<%= " #{@local_hostname} #{@local_domain}" if @local_domain %> <%= @local_hostname %>
+::1 localhost.localdomain localhost
