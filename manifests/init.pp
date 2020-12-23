@@ -1,6 +1,6 @@
 # == Class: hostname
 #
-# Set the hostname on a Mac
+# Set the hostname
 #
 # === Parameters
 #  [*hostname*] Hostname to use
@@ -20,7 +20,6 @@ class hostname (
   case $::osfamily {
     'Darwin': { include hostname::darwin }
     'Archlinux': { include hostname::systemd }
-    'RedHat': { include hostname::systemd }
     default: { fail("Hostname module does not support ${::osfamily}") }
   }
 }
