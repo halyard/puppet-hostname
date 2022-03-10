@@ -19,3 +19,7 @@ hostname::domain: example.com
 include hostname
 ```
 
+## License
+
+hostname is released under the MIT License. See the bundled LICENSE file for details.
+

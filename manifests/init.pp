@@ -1,26 +1,16 @@
-# == Class: hostname
+# @summary Set hostname and related settings
 #
-# Set the hostname
+# @param hostname short hostname for system
+# @param domain domain to use to create FQDN
 #
-# === Parameters
-#  [*hostname*] Hostname to use
-#
-# === Example
-#
-#   class { 'hostname':
-#     hostname => 'potato',
-#     domain   => 'example.com'
-#   }
-#
-
 class hostname (
-  $hostname,
-  $domain = undef
+  String $hostname,
+  Optional[String] $domain = undef
 ) {
-  case $::osfamily {
+  case $facts['os']['family'] {
     'Darwin': { include hostname::darwin }
     'Archlinux': { include hostname::systemd }
     'Arch': { include hostname::systemd }
-    default: { fail("Hostname module does not support ${::osfamily}") }
+    default: { fail("Hostname module does not support ${facts['os']['family']}") }
   }
 }

@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "author": "Les Aker",
   "license": "MIT",
-  "summary": "Configure hostname via Boxen",
+  "summary": "Configure hostname",
   "source": "https://github.com/halyard/puppet-hostname",
   "project_page": "https://github.com/halyard/puppet-hostname",
   "issues_url": "https://github.com/halyard/puppet-hostname/issues",
