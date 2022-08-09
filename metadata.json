@@ -2,8 +2,8 @@
   "name": "halyard-hostname",
   "version": "0.1.4",
   "author": "Les Aker",
-  "license": "MIT",
   "summary": "Configure hostname",
+  "license": "MIT",
   "source": "https://github.com/halyard/puppet-hostname",
   "project_page": "https://github.com/halyard/puppet-hostname",
   "issues_url": "https://github.com/halyard/puppet-hostname/issues",
@@ -12,5 +12,11 @@
   ],
   "operatingsystem_support": [
 
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 6.21.0 < 8.0.0"
+    }
   ]
 }

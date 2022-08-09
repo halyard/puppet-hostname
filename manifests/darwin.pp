@@ -1,9 +1,13 @@
 ##
 # Definitions for Macs
-class hostname::darwin {
-  $local_hostname = $hostname::hostname
-  $local_domain = $hostname::domain
+#
+# @param [String] local_hostname
+#   short hostname for system
 
+#
+class hostname::darwin (
+  String $local_hostname,
+) {
   exec { 'set computername':
     command => "/usr/sbin/scutil --set ComputerName ${local_hostname}",
     unless  => "test `scutil --get ComputerName` == '${local_hostname}'",

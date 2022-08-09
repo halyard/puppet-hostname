@@ -1,0 +1,14 @@
+<%- |
+      Boolean $use_v6, 
+      String $local_hostname,
+      Optional[String] $local_domain,
+| -%>
+#
+# /etc/hosts: static lookup table for host names
+#
+
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4 <%= $local_hostname %><% if $local_domain { -%><%= " ${local_hostname}.${local_domain}" %><% } -%>
+
+<% if $use_v6 { -%>
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6 <%= $local_hostname %><% if $local_domain { -%><%= " ${local_hostname}.${local_domain}" %><% } -%>
+<% } -%>
