@@ -23,7 +23,7 @@ jobs:
       if: github.ref_type == 'tag'
       run: bundle exec rake release
       env:
-        BLACKSMITH_FORGE_API_KEY: {{ secrets.BLACKSMITH_FORGE_API_KEY }}
+        BLACKSMITH_FORGE_API_KEY: ${{ secrets.BLACKSMITH_FORGE_API_KEY }}
     - name: Post to a Slack channel
       if: ${{ failure() }}
       uses: slackapi/slack-github-action@v1.18.0
