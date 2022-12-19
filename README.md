@@ -2,7 +2,7 @@ puppet-hostname
 ===========
 
 [![Puppet Forge](https://img.shields.io/puppetforge/v/halyard/hostname.svg)](https://forge.puppetlabs.com/halyard/hostname)
-[![GitHub Workflow Status](https://img.shields.io/actions/github/workflow/status/halyard/puppet-hostname/build.yml?branch=main)](https://github.com/halyard/puppet-hostname/actions)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/halyard/puppet-hostname/build.yml?branch=main)](https://github.com/halyard/puppet-hostname/actions)
 [![MIT Licensed](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://tldrlegal.com/license/mit-license)
 
 Module to set hostname and /etc/hosts
