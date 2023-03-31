@@ -12,6 +12,7 @@ class hostname (
     'Archlinux': { include hostname::systemd }
     'Arch': { include hostname::systemd }
     'RedHat': { include hostname::systemd }
+    'Debian': { include hostname::systemd }
     default: { fail("Hostname module does not support ${facts['os']['family']}") }
   }
 }
