@@ -1,6 +1,6 @@
 {
   "name": "halyard-hostname",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "author": "Les Aker",
   "license": "MIT",
   "summary": "Configure hostname",
